@@ -9,7 +9,7 @@ export default function Home() {
         <header className="z-10 flex-grow flex flex-col justify-center items-center gap-2.5">
           <p className="text-4xl font-black">Sorteo Tarjeta Amazon 100€</p>
           <p className="text-pink-100">Inscríbete en aquí y gana una tarjeta regalo de Amazon valorada en 100€</p>
-          <Link href={`#!`} className="border border-transparent hover:border-white bg-white px-4 py-2 text-pink-600 w-fit mt-10 rounded-md hover:bg-pink-600/20 hover:text-white transition-all">Participa ahora</Link>
+          <Link href={`/amazon_gift_card_100`} className="border border-transparent hover:border-white bg-white px-4 py-2 text-pink-600 w-fit mt-10 rounded-md hover:bg-pink-600/20 hover:text-white transition-all">Participa ahora</Link>
         </header>
         <Image alt="test" src={`/test.jpg`} width={380} height={96} className="rounded-md flex-grow-0"></Image>
         <section className="absolute bottom-0 p-2.5 flex items-center justify-center w-full gap-2.5">
@@ -24,7 +24,7 @@ export default function Home() {
           <p className="text-sm font-medium">Estos son los sorteos activos, ¡participa para ganar!</p>
         </header>
         <section className="flex py-2 gap-5 justify-center flex-wrap">
-          <Link href={`#!`} className="flex gap-2.5 flex-col min-w-[320px] text-orange-500 font-medium p-2.5 rounded-md bg-white hover:bg-orange-100 transition-all border-orange-300 border">
+          <Link href={`/giveaway/amazon_gift_card_100`} className="flex gap-2.5 flex-col min-w-[320px] text-orange-500 font-medium p-2.5 rounded-md bg-white hover:bg-orange-100 transition-all border-orange-300 border">
             <section className="w-full h-40 bg-orange-400 rounded-md"></section>
             <header className="flex-grow text-center">
               <p className="font-bold">Tarjeta de Amazon de 100€</p>
@@ -44,7 +44,7 @@ export default function Home() {
           </Link>
         </section>
       </section>
-      <section className="max-w-[1000px] w-full mx-auto">
+      <section className="max-w-[1000px] w-full mx-auto mb-10">
         <header className="text-center mb-10">
           <p className="text-4xl font-black text-pink-600">Ganadores</p>
           <p className="text-sm text-pink-500 font-medium">Aquí podrás ver todos los ganadores de sorteos anteriores</p>
