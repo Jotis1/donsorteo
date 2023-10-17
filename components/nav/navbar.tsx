@@ -1,19 +1,21 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon as I } from "@fortawesome/react-fontawesome";
-import { faTrophy, faCrown, faAddressBook, faTablet, faMoneyCheckDollar, faMobile } from "@fortawesome/free-solid-svg-icons";
+import { faTrophy, faCrown, faTablet, faMoneyCheckDollar, faMobile } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
     return (
-        <nav className="shadow-md shadow-orange-400/30 z-10 h-16 w-full sticky top-0 border-b border-orange-200 bg-white flex justify-between items-center px-5">
-            <header>
-                <Link className={`text-2xl text-orange-400`} href={`/`}>DON<span className="font-extrabold">SORTEO</span></Link>
-            </header>
-            <main className="h-full font-medium flex gap-2 text-center items-center text-orange-400 transition-all">
-                <button className="gap-2.5 p-2 flex items-center rounded-xl border border-transparent hover:bg-orange-100 hover:border-orange-200 transition-all">
+        <nav className="z-10 h-16 w-full sticky top-0 bg-white flex justify-between items-center px-5">
+            <Link href={`/`} className="flex items-center gap-2.5">
+                <Image alt="" width={44} height={44} src={`/Logo don sorteo.png`}></Image>
+                <p className="text-xl text-orange-500">Don<span className="font-black">Sorteo</span></p>
+            </Link>
+            <main className="h-full font-medium flex gap-2 text-center items-center text-orange-500 transition-all">
+                <Link href={`/#winners`} className="gap-2.5 p-2 flex items-center rounded-xl border border-transparent hover:bg-orange-100 hover:border-orange-200 transition-all">
                     <I icon={faCrown}></I>
                     <p>Ganadores</p>
-                </button>
+                </Link>
                 <section className="group relative">
                     <button className="gap-2.5 p-2 flex items-center  rounded-xl border border-transparent hover:bg-orange-100 hover:border-orange-200 transition-all">
                         <I icon={faTrophy}></I>

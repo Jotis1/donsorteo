@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <nav className="h-14 bg-pink-600 flex justify-between flex-wrap items-center p-5 text-sm text-white">
+        <nav className="min-h-[56px] bg-pink-600 flex justify-between flex-wrap items-center p-5 text-sm text-white">
             <header>
                 <p>© 2023 <Link href={`/`}>Don Sorteo.</Link> Todos los derechos reservados.</p>
             </header>
