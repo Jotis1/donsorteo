@@ -13,6 +13,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      animation: {
+        fadeInOut: "fadeInOut .3s ease-in-out"
+      },
+      keyframes: {
+        fadeInOut: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        }
+      }
     },
   },
   plugins: [require('@tailwindcss/forms'),],

@@ -2,39 +2,53 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [carrousel, setCarrousel] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carrousel === 2) {
+        setCarrousel(0);
+      } else {
+        setCarrousel(carrousel + 1);
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [carrousel]);
+
   return (
     <main className="flex flex-col gap-10 p-2 my-2">
       <section
-        className="mx-auto text-center flex flex-wrap gap-5 bg-pink-600 shadow-md items-center justify-around text-white bg-cover bg-center relative max-w-[1500px] w-full min-h-[400px] rounded-md p-10">
+        className="font-medium mx-auto text-center flex bg-neutral-600/60 flex-wrap gap-5 shadow-md items-center justify-around text-white bg-cover bg-center relative max-w-[1500px] w-full min-h-[400px] rounded-md p-10">
         {carrousel == 0 ? (
-          <header className="z-[1] flex-grow flex flex-col justify-center items-center gap-2.5">
+          <section className="z-[1] animate-fadeInOut flex-grow flex flex-col justify-center items-center gap-2.5">
             <p className="text-4xl font-black">Sorteo Tarjeta Amazon 100€</p>
             <p className="text-pink-100">Inscríbete en aquí y gana una tarjeta regalo de Amazon valorada en 100€</p>
             <Link href={`/amazon_gift_card_100`} className="bg-pink-600 px-4 py-2 text-white w-fit mt-10 rounded-md hover:bg-white hover:text-pink-600 transition-all">Participa ahora</Link>
             <span className="absolute -z-[1] bg-neutral-600/60 w-full h-full"></span>
             <Image alt="fondo 1" className="-z-[2]" fill objectFit="cover" src={`/Fondo1.png`}></Image>
-          </header>
+          </section>
         ) : carrousel == 1 ? (
-          <header className="z-10 flex-grow flex flex-col justify-center items-center gap-2.5">
+          <header className="z-[1] animate-fadeInOut flex-grow flex flex-col justify-center items-center gap-2.5">
             <p className="text-4xl font-black">Sorteo Samsung Galaxy M13</p>
             <p className="text-pink-100">Inscríbete en aquí y gana un móvil Samsung Galaxy M13 valorado en +200€</p>
             <Link href={`/amazon_gift_card_100`} className="bg-pink-600 px-4 py-2 text-white w-fit mt-10 rounded-md hover:bg-white hover:text-pink-600 transition-all">Participa ahora</Link>
             <span className="absolute -z-[1] bg-neutral-600/60 w-full h-full"></span>
-            <Image alt="fondo 1" className="-z-[2]" fill objectFit="cover" src={`/Fondo2.png`}></Image>
+            <Image alt="fondo 2" className="-z-[2]" fill objectFit="cover" src={`/Fondo2.png`}></Image>
           </header>
         ) : carrousel == 2 && (
-          <header className="z-10 flex-grow flex flex-col justify-center items-center gap-2.5">
+          <div className="z-[1] animate-fadeInOut flex-grow flex flex-col justify-center items-center gap-2.5">
             <p className="text-4xl font-black">Sorteo Tablet Facetel</p>
             <p className="text-pink-100">Inscríbete en aquí y gana una tablet Facetel valorada en +200€</p>
             <Link href={`/amazon_gift_card_100`} className="bg-pink-600 px-4 py-2 text-white w-fit mt-10 rounded-md hover:bg-white hover:text-pink-600 transition-all">Participa ahora</Link>
             <span className="absolute -z-[1] bg-neutral-600/60 w-full h-full"></span>
-            <Image alt="fondo 1" className="-z-[2]" fill objectFit="cover" src={`/Fondo3.png`}></Image>
-          </header>
+            <Image alt="fondo 3" className="-z-[2]" fill objectFit="cover" src={`/Fondo3.png`}></Image>
+          </div>
         )}
         <section className="absolute z-[11] bottom-0 p-2.5 flex items-center justify-center w-full gap-2.5">
           <button onClick={() => setCarrousel(0)} className={`${carrousel == 0 ? "w-12" : "w-4"} transition-all h-4 rounded-full bg-white`}></button>
